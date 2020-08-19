@@ -1,0 +1,22 @@
+Footer {
+    background-color: white;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: black;
+  }
+
+  .page-footer {
+    height: 20vh;
+    min-height: 10vw;
+    max-height: 20vw;
+    min-width: 400px;
+    font-size: 1.75vw;
+  }
+
+.footer-element {
+   margin-left: 1.2vw;
+   margin-right: 1.2vw;
+   width: 8vw;
+   color: rgb(0,0,0);
+   text-decoration: none;
+}

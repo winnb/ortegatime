@@ -1,0 +1,39 @@
+.nav-bar {
+    background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(252, 161, 255));
+    height: 20vh;
+    min-height: 10vw;
+    max-height: 20vw;
+    min-width: 400px;
+    font-size: 2vw;
+    display : flex;
+    align-items : center;
+  }
+  
+.navbar-title {
+    border-bottom-color: rgb(227, 142, 253);
+    border-bottom-style: solid;
+    margin-left: 1.5vw;
+    text-decoration: none;
+    width: 6vw;
+    margin-left: 3vw;
+    margin-right: 1vw;
+}
+
+.navbar-block {
+    border-bottom-color: rgb(227, 142, 253);
+    border-bottom-style: solid;
+    margin-left: 1.5vw;
+    text-decoration: none;
+    width: 8vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+a {
+    transform: scale(0.97);
+}
+
+a:hover {
+    transform: scale(1);
+    transition-duration: 0.33s;
+}

@@ -21,14 +21,13 @@ class App extends React.Component {
     return (
       <div className="App">
           <div>
-            <NavBar />
+            {/* <NavBar /> */}
             <Router>
               <Home path="/" />
               <PageNotFound path="/page-not-found" default />
             </Router>
           </div>
-        )
-        <Footer/>
+        {/* <Footer/> */}
       </div>
     );
   }
