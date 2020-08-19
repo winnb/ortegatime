@@ -12,7 +12,6 @@ class Home extends React.Component {
         <img id="home-background" src={Yosemite}/>
         <img id="home-background" src={Saints}/>
         <img id="schedule" src={Schedule}/>
-        <div id="home-box">Hi</div>
         <Timer/>
       </div>
     );

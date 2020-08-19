@@ -1,7 +1,7 @@
 .clock {
     z-index: 100;
     position: absolute;
-    top: 20vh;
+    top: 10vw;
     font-size: 5vw;
     font-weight: 550;
     width: 54vw;
@@ -12,7 +12,7 @@
 .clock-block {
     z-index: 100;
     position: absolute;
-    top: 60vh;
+    top: 30vw;
     font-size: 4vw;
     font-weight: 550;
     margin-left: 10vw;
@@ -26,7 +26,7 @@
 }
 
 #period {
-    margin-left: 25vw;
+    margin-left: 20vw;
 }
 
 #time-block {
