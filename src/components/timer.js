@@ -7,6 +7,8 @@ class Timer extends React.Component {
         super(props);
         this.state = {
           time: new Date().toLocaleString(),
+          endHour: 0,
+          endMinutes: 0
         };
       }
 
@@ -22,224 +24,313 @@ componentWillUnmount() {
 }
 
 tick() {
-    this.setState({
-        time: new Date().toLocaleString()
-    });
-    // Not a weekend day
-    if (new Date().toDateString().substr(0,3) !== "Sat" && new Date().toDateString().substr(0,3) !== "Sun") {
-        // Before any class
-        if (new Date().getHours()<7) {
-            document.getElementById("period").innerText = "before school";
-            document.getElementById("time-block").innerText = "Period 0 starts at 7:00am!";
-        }
-        // 7-8am Zero Period
-        if (new Date().getHours()===7) {
-            document.getElementById("period").innerText = "Period 0";
-            document.getElementById("time-block").innerText = "7:00am-8:00am";
-        }
-        // 8-8:30am Office Hours
-        if (new Date().getHours()===8 && new Date().getMinutes()<30) {
-            document.getElementById("period").innerText = "Office Hours";
-            document.getElementById("time-block").innerText = "8:00am-8:30am";
-        }
-        // Mon and Thur have same schedule
-        if (new Date().toDateString().substr(0,3) === "Mon" || new Date().toDateString().substr(0,3) === "Thu") {
-            // 1st Period 8:30am-9:50am
-            if ((new Date().getHours()===8 && new Date().getMinutes()>29) || (new Date().getHours()===9 && new Date().getMinutes()>51) ) {
-                document.getElementById("period").innerText = "Period 1";
-                document.getElementById("time-block").innerText = "8:30am-9:50am";
-            }
-            // Passing Period 9:50am-10:00am
-            if (new Date().getHours()===9 && new Date().getMinutes()>50) {
-                document.getElementById("period").innerText = "Passing Period";
-                document.getElementById("time-block").innerText = "Period 3 starts at 10:00am";
-            }
-            // 3rd Period 10:00am-11:20am
-            if (new Date().getHours()===10 || (new Date().getHours()===11 && new Date().getMinutes()<21) ) {
-                document.getElementById("period").innerText = "Period 3";
-                document.getElementById("time-block").innerText = "10:00am-11:20am";
-            }
-            // Passing Period 11:20am-11:30am
-            if (new Date().getHours()===11 && new Date().getMinutes()>20 && new Date().getMinutes()<30) {
-                document.getElementById("period").innerText = "Passing Period";
-                document.getElementById("time-block").innerText = "Period 5 starts at 11:30am";
-            }
-            // 5th Period 11:30am-12:50pm
-            if ((new Date().getHours()===11 && new Date().getMinutes()>29) || (new Date().getHours()===12 && new Date().getMinutes()<51) ) {
-                document.getElementById("period").innerText = "Period 5";
-                document.getElementById("time-block").innerText = "11:30am-12:50am";
-            }
-            // Lunch Break 12:50pm-1:50pm
-            if ((new Date().getHours()===12 && new Date().getMinutes()>50) || (new Date().getHours()===13 && new Date().getMinutes()<51) ) {
-                document.getElementById("period").innerText = "Lunch Break";
-                document.getElementById("time-block").innerText = "12:50am-1:50pm";
-            }
-            // Office Hours 1:50pm-2:45pm
-            if ((new Date().getHours()===13 && new Date().getMinutes()>50) || (new Date().getHours()===14 && new Date().getMinutes()<46) ) {
-                document.getElementById("period").innerText = "Office Hours";
-                document.getElementById("time-block").innerText = "1:50pm-2:45pm";
-            }
-            // Not a monday
-            if (new Date().toDateString().substr(0,3) !== "Mon") {
-                // 7th/8th Period 2:45pm-4:00pm
-                if ((new Date().getHours()===14 && new Date().getMinutes()>45) || new Date().getHours()===15) {
-                    document.getElementById("period").innerText = "Period 7";
-                    document.getElementById("time-block").innerText = "2:45pm-4:00pm";
-                }
-                // School over
-                if (new Date().getHours()>14) {
-                    document.getElementById("period").innerText = "after school";
-                    document.getElementById("time-block").innerText = "past 4:00pm";
-                }
-            }
-            else
-                if ((new Date().getHours()===14 && new Date().getMinutes()>45) || new Date().getHours()>14) {
-                    document.getElementById("period").innerText = "after school";
-                    document.getElementById("time-block").innerText = "past 4:00pm";
-                }
-        }
-        // Tues and Fri have same schedule
-        else if (new Date().toDateString().substr(0,3) === "Tue" || new Date().toDateString().substr(0,3) === "Fri") {
-            // 2nd Period 8:30-9:50am
-            if ((new Date().getHours()===8 && new Date().getMinutes()>29) || (new Date().getHours()===9 && new Date().getMinutes()>51) ) {
-                document.getElementById("period").innerText = "Period 2";
-                document.getElementById("time-block").innerText = "8:30am-9:50am";
-            }
-            // Passing Period 9:50am-10:00am
-            if (new Date().getHours()===9 && new Date().getMinutes()>50) {
-                document.getElementById("period").innerText = "Passing Period";
-                document.getElementById("time-block").innerText = "Period 4 starts at 10:00am";
-            }
-            // 4th Period 10:00am-11:20am
-            if (new Date().getHours()===10 || (new Date().getHours()===11 && new Date().getMinutes()<21) ) {
-                document.getElementById("period").innerText = "Period 4";
-                document.getElementById("time-block").innerText = "10:00am-11:20am";
-            }
-            // Passing Period 11:20am-11:30am
-            if (new Date().getHours()===11 && new Date().getMinutes()>20 && new Date().getMinutes()<30) {
-                document.getElementById("period").innerText = "Passing Period";
-                document.getElementById("time-block").innerText = "Period 6 starts at 11:30am";
-            }
-            // 6th Period 11:30am-12:50pm
-            if ((new Date().getHours()===11 && new Date().getMinutes()>29) || (new Date().getHours()===12 && new Date().getMinutes()<51) ) {
-                document.getElementById("period").innerText = "Period 6";
-                document.getElementById("time-block").innerText = "11:30am-12:50am";
-            }
-            // Lunch Break 12:50pm-1:50pm
-            if ((new Date().getHours()===12 && new Date().getMinutes()>50) || (new Date().getHours()===13 && new Date().getMinutes()<51) ) {
-                document.getElementById("period").innerText = "Lunch Break";
-                document.getElementById("time-block").innerText = "12:50am-1:50pm";
-            }
-            // Office Hours 1:50pm-2:45pm
-            if ((new Date().getHours()===13 && new Date().getMinutes()>50) || (new Date().getHours()===14 && new Date().getMinutes()<46) ) {
-                document.getElementById("period").innerText = "Office Hours";
-                document.getElementById("time-block").innerText = "1:50pm-2:45pm";
-            }
-            // 7th/8th Period
-            if ((new Date().getHours()===14 && new Date().getMinutes()>45) || new Date().getHours()===15) {
-                document.getElementById("period").innerText = "Period 8";
-                document.getElementById("time-block").innerText = "2:45pm-4:00pm";
-            }
-            // School over
-            if (new Date().getHours()>14) {
-                document.getElementById("period").innerText = "after school";
-                document.getElementById("time-block").innerText = "past 4:00pm";
-            }                                                                                                                                          
-        }
-        // Wed schedule
-        else if (new Date().toDateString().substr(0,3) === "Wed") {
-            // 1st Period 8:30am-9:10am
-            if ((new Date().getHours()===8 && new Date().getMinutes()>29) || (new Date().getHours()===9 && new Date().getMinutes()<11) ) {
-                document.getElementById("period").innerText = "Period 1";
-                document.getElementById("time-block").innerText = "8:30am-9:10am";
-            }
-            // Passing Period 9:10am-9:15am
-            if (new Date().getHours()===9 && new Date().getMinutes()>10 && new Date().getMinutes()<15) {
-                document.getElementById("period").innerText = "Passing Period";
-                document.getElementById("time-block").innerText = "Period 2 starts at 9:15am";
-            }
-            // 2nd Period 9:15am-9:50am
-            if (new Date().getHours()===9 && new Date().getMinutes()>14 && new Date().getMinutes()<51) {
-                document.getElementById("period").innerText = "Period 2";
-                document.getElementById("time-block").innerText = "9:15am-9:50am";
-            }
-            // Passing Period 9:50am-10:00am
-            if (new Date().getHours()===9 && new Date().getMinutes()>50) {
-                document.getElementById("period").innerText = "Passing Period";
-                document.getElementById("time-block").innerText = "Period 3 starts at 10:00am";
-            }
-            // 3rd Period 10:00am-10:40am
-            if (new Date().getHours()===10 && new Date().getMinutes()<40) {
-                document.getElementById("period").innerText = "Period 3";
-                document.getElementById("time-block").innerText = "10:00am-10:40am";
-            }
-            // Passing Period 10:40am-10:45am
-            if (new Date().getHours()===10 && new Date().getMinutes()>40 && new Date().getMinutes()<45) {
-                document.getElementById("period").innerText = "Passing Period";
-                document.getElementById("time-block").innerText = "Period 4 starts at 10:45am";
-            }
-            // 4th Period 10:45am-11:20am
-            if ((new Date().getHours()===10 && new Date().getMinutes()>44) || (new Date().getHours()===11 && new Date().getMinutes()<21) ) {
-                document.getElementById("period").innerText = "Period 4";
-                document.getElementById("time-block").innerText = "10:45am-11:20am";
-            }
-            // Passing Period 11:20am-11:30am
-            if (new Date().getHours()===11 && new Date().getMinutes()>20 && new Date().getMinutes()<30) {
-                document.getElementById("period").innerText = "Passing Period";
-                document.getElementById("time-block").innerText = "Period 5 starts at 11:30am";
-            }
-            // 5th Period 11:30am-12:10pm
-            if ((new Date().getHours()===11 && new Date().getMinutes()>29) || (new Date().getHours()===12 && new Date().getMinutes()<6) ) {
-                document.getElementById("period").innerText = "Period 5";
-                document.getElementById("time-block").innerText = "11:30am-12:10pm";
-            }
-            // Passing Period 12:10pm-12:15pm
-            if (new Date().getHours()===12 && new Date().getMinutes()>5 && new Date().getMinutes()<15) {
-                document.getElementById("period").innerText = "Passing Period";
-                document.getElementById("time-block").innerText = "Period 6 starts at 12:15pm";
-            }
-            // 6th Period 12:15pm-12:50pm
-            if (new Date().getHours()===12 && new Date().getMinutes()>14 && new Date().getMinutes()<51) {
-                document.getElementById("period").innerText = "Period 6";
-                document.getElementById("time-block").innerText = "12:15pm-12:50pm";
-            }
-            // Lunch Break 12:50pm-1:50pm
-            if ((new Date().getHours()===12 && new Date().getMinutes()>50) || (new Date().getHours()===13 && new Date().getMinutes()<51) ) {
-                document.getElementById("period").innerText = "Lunch Break";
-                document.getElementById("time-block").innerText = "12:50am-1:50pm";
-            }
-            if ((new Date().getHours()===13 && new Date().getMinutes()>50) || (new Date().getHours()===14 && new Date().getMinutes()<46) ) {
-                document.getElementById("period").innerText = "Office Hours";
-                document.getElementById("time-block").innerText = "1:50pm-2:45pm";
-            }
-            // Not a monday
-            if ((new Date().getHours()===14 && new Date().getMinutes()>45) || new Date().getHours()===15) {
-                document.getElementById("period").innerText = "Period 7/8";
-                document.getElementById("time-block").innerText = "2:45pm-4:00pm";
-            }
-            if (new Date().getHours()>14) {
-                document.getElementById("period").innerText = "after school";
-                document.getElementById("time-block").innerText = "past 4:00pm";
-            }
-        }
+    var now = new Date();
+    var timeLength = now.toLocaleTimeString().length;
+    this.setState({ time: now.toDateString()+" "+now.toLocaleTimeString().substr(0,timeLength-6)+" "+now.toLocaleTimeString().substr(timeLength-2,timeLength) });
+    this.weekday(now);
+    this.weekend(now);
+    this.countdown(now);
+    //this.countdownColor(now);
+}
+
+weekday(now) { // Mon-Fri
+    if (now.toDateString().substr(0,3) !== "Sat" && now.toDateString().substr(0,3) !== "Sun") {
+        this.morning(now);
+        this.mondayThursday(now);
+        this.tuesdayFriday(now);
+        this.wednesday(now);
     }
-    // Sat or Sun
-    else {
-        document.getElementById("period").innerText = "the weekend";
+}
+
+weekend(now) { // Sat or Sun
+    if (now.toDateString().substr(0,3) === "Sat" || now.toDateString().substr(0,3) === "Sun") {
+        document.getElementById("period").innerText = "your weekend";
         document.getElementById("time-block").innerText = "See you soon!";
     }
 }
 
+morning(now) {
+    // Before any class
+    if (now.getHours()<7) {
+        document.getElementById("period").innerText = "before school";
+        document.getElementById("time-block").innerText = "Period 0 starts at 7:00am!";
+        this.setState({endHour: 7, endMinutes: 0});
+    }
+    // 7-8am Zero Period
+    if (now.getHours()===7) {
+        document.getElementById("period").innerText = "Period 0";
+        document.getElementById("time-block").innerText = "7:00am-8:00am";
+        this.setState({endHour: 8, endMinutes: 0});
+    }
+    // 8-8:30am Office Hours
+    if (now.getHours()===8 && now.getMinutes()<30) {
+        document.getElementById("period").innerText = "Office Hours";
+        document.getElementById("time-block").innerText = "8:00am-8:30am";
+        this.setState({endHour: 8, endMinutes: 30});
+    }
+}
 
+mondayThursday(now) {
+    // Mon and Thur have same schedule
+    if (now.toDateString().substr(0,3) === "Mon" || now.toDateString().substr(0,3) === "Thu") {
+        // 1st Period 8:30am-9:50am
+        if ((now.getHours()===8 && now.getMinutes()>29) || (now.getHours()===9 && now.getMinutes()<50) ) {
+            document.getElementById("period").innerText = "Period 1";
+            document.getElementById("time-block").innerText = "8:30am-9:50am";
+            this.setState({endHour: 9, endMinutes: 50});
+        }
+        // Passing Period 9:50am-10:00am
+        if (now.getHours()===9 && now.getMinutes()>49) {
+            document.getElementById("period").innerText = "Passing Period";
+            document.getElementById("time-block").innerText = "Period 3 starts at 10:00am";
+            this.setState({endHour: 10, endMinutes: 0});
+        }
+        // 3rd Period 10:00am-11:20am
+        if (now.getHours()===10 || (now.getHours()===11 && now.getMinutes()<19) ) {
+            document.getElementById("period").innerText = "Period 3";
+            document.getElementById("time-block").innerText = "10:00am-11:20am";
+            this.setState({endHour: 11, endMinutes: 20});
+        }
+        // Passing Period 11:20am-11:30am
+        if (now.getHours()===11 && now.getMinutes()>19 && now.getMinutes()<30) {
+            document.getElementById("period").innerText = "Passing Period";
+            document.getElementById("time-block").innerText = "Period 5 starts at 11:30am";
+            this.setState({endHour: 11, endMinutes: 30});
+        }
+        // 5th Period 11:30am-12:50pm
+        if ((now.getHours()===11 && now.getMinutes()>29) || (now.getHours()===12 && now.getMinutes()<50) ) {
+            document.getElementById("period").innerText = "Period 5";
+            document.getElementById("time-block").innerText = "11:30am-12:50am";
+            this.setState({endHour: 12, endMinutes: 50});
+        }
+        // Lunch Break 12:50pm-1:50pm
+        if ((now.getHours()===12 && now.getMinutes()>49) || (now.getHours()===13 && now.getMinutes()<50) ) {
+            document.getElementById("period").innerText = "Lunch Break";
+            document.getElementById("time-block").innerText = "12:50am-1:50pm";
+            this.setState({endHour: 13, endMinutes: 50});
+        }
+        // Office Hours 1:50pm-2:45pm
+        if ((now.getHours()===13 && now.getMinutes()>49) || (now.getHours()===14 && now.getMinutes()<45) ) {
+            document.getElementById("period").innerText = "Office Hours";
+            document.getElementById("time-block").innerText = "1:50pm-2:45pm";
+            this.setState({endHour: 14, endMinutes: 45});
+        }
+        // Not a monday
+        if (now.toDateString().substr(0,3) !== "Mon") {
+            // 7th/8th Period 2:45pm-4:00pm
+            if ((now.getHours()===14 && now.getMinutes()>44) || now.getHours()===15) {
+                document.getElementById("period").innerText = "Period 7";
+                document.getElementById("time-block").innerText = "2:45pm-4:00pm";
+                this.setState({endHour: 16, endMinutes: 0});
+            }
+            // School over
+            if (now.getHours()>14) {
+                document.getElementById("period").innerText = "after school";
+                document.getElementById("time-block").innerText = "past 4:00pm";
+                this.setState({endHour: 99, endMinutes: 0});
+            }
+        }
+        else
+            if ((now.getHours()===14 && now.getMinutes()>44) || now.getHours()>14) {
+                document.getElementById("period").innerText = "after school";
+                document.getElementById("time-block").innerText = "past 4:00pm";
+                this.setState({endHour: 99, endMinutes: 0});
+            }
+    }
+}
+
+tuesdayFriday(now) {
+    // Tues and Fri have same schedule
+    if (now.toDateString().substr(0,3) === "Tue" || now.toDateString().substr(0,3) === "Fri") {
+        // 2nd Period 8:30-9:50am
+        if ((now.getHours()===8 && now.getMinutes()>29) || (now.getHours()===9 && now.getMinutes()<50) ) {
+            document.getElementById("period").innerText = "Period 2";
+            document.getElementById("time-block").innerText = "8:30am-9:50am";
+            this.setState({endHour: 9, endMinutes: 50});
+        }
+        // Passing Period 9:50am-10:00am
+        if (now.getHours()===9 && now.getMinutes()>49) {
+            document.getElementById("period").innerText = "Passing Period";
+            document.getElementById("time-block").innerText = "Period 4 starts at 10:00am";
+            this.setState({endHour: 10, endMinutes: 0});
+        }
+        // 4th Period 10:00am-11:20am
+        if (now.getHours()===10 || (now.getHours()===11 && now.getMinutes()<20) ) {
+            document.getElementById("period").innerText = "Period 4";
+            document.getElementById("time-block").innerText = "10:00am-11:20am";
+            this.setState({endHour: 11, endMinutes: 20});
+        }
+        // Passing Period 11:20am-11:30am
+        if (now.getHours()===11 && now.getMinutes()>19 && now.getMinutes()<30) {
+            document.getElementById("period").innerText = "Passing Period";
+            document.getElementById("time-block").innerText = "Period 6 starts at 11:30am";
+            this.setState({endHour: 11, endMinutes: 30});
+        }
+        // 6th Period 11:30am-12:50pm
+        if ((now.getHours()===11 && now.getMinutes()>29) || (now.getHours()===12 && now.getMinutes()<50) ) {
+            document.getElementById("period").innerText = "Period 6";
+            document.getElementById("time-block").innerText = "11:30am-12:50am";
+            this.setState({endHour: 15, endMinutes: 50});
+        }
+        // Lunch Break 12:50pm-1:50pm
+        if ((now.getHours()===12 && now.getMinutes()>49) || (now.getHours()===13 && now.getMinutes()<50) ) {
+            document.getElementById("period").innerText = "Lunch Break";
+            document.getElementById("time-block").innerText = "12:50am-1:50pm";
+            this.setState({endHour: 13, endMinutes: 50});
+        }
+        // Office Hours 1:50pm-2:45pm
+        if ((now.getHours()===13 && now.getMinutes()>49) || (now.getHours()===14 && now.getMinutes()<45) ) {
+            document.getElementById("period").innerText = "Office Hours";
+            document.getElementById("time-block").innerText = "1:50pm-2:45pm";
+            this.setState({endHour: 14, endMinutes: 45});
+        }
+        // 7th/8th Period
+        if ((now.getHours()===14 && now.getMinutes()>44) || now.getHours()===15) {
+            document.getElementById("period").innerText = "Period 8";
+            document.getElementById("time-block").innerText = "2:45pm-4:00pm";
+            this.setState({endHour: 16, endMinutes: 0});
+        }
+        // School over
+        if (now.getHours()>14) {
+            document.getElementById("period").innerText = "after school";
+            document.getElementById("time-block").innerText = "past 4:00pm";
+            this.setState({endHour: 99, endMinutes: 0});
+        }                                                                                                                                          
+    }
+}
+
+wednesday(now) {
+    // Wed schedule
+    if (now.toDateString().substr(0,3) === "Wed") {
+        // 1st Period 8:30am-9:10am
+        if ((now.getHours()===8 && now.getMinutes()>29) || (now.getHours()===9 && now.getMinutes()<10) ) {
+            document.getElementById("period").innerText = "Period 1";
+            document.getElementById("time-block").innerText = "8:30am-9:10am";
+            this.setState({endHour: 9, endMinutes: 10});
+        }
+        // Passing Period 9:10am-9:15am
+        if (now.getHours()===9 && now.getMinutes()>10 && now.getMinutes()<15) {
+            document.getElementById("period").innerText = "Passing Period";
+            document.getElementById("time-block").innerText = "Period 2 starts at 9:15am";
+            this.setState({endHour: 9, endMinutes: 15});
+        }
+        // 2nd Period 9:15am-9:50am
+        if (now.getHours()===9 && now.getMinutes()>14 && now.getMinutes()<50) {
+            document.getElementById("period").innerText = "Period 2";
+            document.getElementById("time-block").innerText = "9:15am-9:50am";
+            this.setState({endHour: 9, endMinutes: 50});
+        }
+        // Passing Period 9:50am-10:00am
+        if (now.getHours()===9 && now.getMinutes()>50) {
+            document.getElementById("period").innerText = "Passing Period";
+            document.getElementById("time-block").innerText = "Period 3 starts at 10:00am";
+            this.setState({endHour: 10, endMinutes: 0});
+        }
+        // 3rd Period 10:00am-10:40am
+        if (now.getHours()===10 && now.getMinutes()<40) {
+            document.getElementById("period").innerText = "Period 3";
+            document.getElementById("time-block").innerText = "10:00am-10:40am";
+            this.setState({endHour: 10, endMinutes: 40});
+        }
+        // Passing Period 10:40am-10:45am
+        if (now.getHours()===10 && now.getMinutes()>40 && now.getMinutes()<45) {
+            document.getElementById("period").innerText = "Passing Period";
+            document.getElementById("time-block").innerText = "Period 4 starts at 10:45am";
+            this.setState({endHour: 10, endMinutes: 45});
+        }
+        // 4th Period 10:45am-11:20am
+        if ((now.getHours()===10 && now.getMinutes()>44) || (now.getHours()===11 && now.getMinutes()<20) ) {
+            document.getElementById("period").innerText = "Period 4";
+            document.getElementById("time-block").innerText = "10:45am-11:20am";
+            this.setState({endHour: 11, endMinutes: 20});
+        }
+        // Passing Period 11:20am-11:30am
+        if (now.getHours()===11 && now.getMinutes()>20 && now.getMinutes()<30) {
+            document.getElementById("period").innerText = "Passing Period";
+            document.getElementById("time-block").innerText = "Period 5 starts at 11:30am";
+            this.setState({endHour: 11, endMinutes: 30});
+        }
+        // 5th Period 11:30am-12:10pm
+        if ((now.getHours()===11 && now.getMinutes()>29) || (now.getHours()===12 && now.getMinutes()<10) ) {
+            document.getElementById("period").innerText = "Period 5";
+            document.getElementById("time-block").innerText = "11:30am-12:10pm";
+            this.setState({endHour: 12, endMinutes: 10});
+        }
+        // Passing Period 12:10pm-12:15pm
+        if (now.getHours()===12 && now.getMinutes()>5 && now.getMinutes()<15) {
+            document.getElementById("period").innerText = "Passing Period";
+            document.getElementById("time-block").innerText = "Period 6 starts at 12:15pm";
+            this.setState({endHour: 12, endMinutes: 15});
+        }
+        // 6th Period 12:15pm-12:50pm
+        if (now.getHours()===12 && now.getMinutes()>14 && now.getMinutes()<50) {
+            document.getElementById("period").innerText = "Period 6";
+            document.getElementById("time-block").innerText = "12:15pm-12:50pm";
+            this.setState({endHour: 12, endMinutes: 50});
+        }
+        // Lunch Break 12:50pm-1:50pm
+        if ((now.getHours()===12 && now.getMinutes()>49) || (now.getHours()===13 && now.getMinutes()<50) ) {
+            document.getElementById("period").innerText = "Lunch Break";
+            document.getElementById("time-block").innerText = "12:50am-1:50pm";
+            this.setState({endHour: 13, endMinutes: 50});
+        }
+        if ((now.getHours()===13 && now.getMinutes()>50) || (now.getHours()===14 && now.getMinutes()<45) ) {
+            document.getElementById("period").innerText = "Office Hours";
+            document.getElementById("time-block").innerText = "1:50pm-2:45pm";
+            this.setState({endHour: 14, endMinutes: 45});
+        }
+        // Not a monday
+        if ((now.getHours()===14 && now.getMinutes()>45) || now.getHours()===15) {
+            document.getElementById("period").innerText = "Period 7/8";
+            document.getElementById("time-block").innerText = "2:45pm-4:00pm";
+            this.setState({endHour: 16, endMinutes: 0});
+        }
+        if (now.getHours()>14) {
+            document.getElementById("period").innerText = "after school";
+            document.getElementById("time-block").innerText = "past 4:00pm";
+            this.setState({endHour: 99, endMinutes: 0});
+        }
+    }
+}
+
+countdown(now) {
+    // Countdown
+    var periodEnd = new Date();
+    periodEnd.setHours(this.state.endHour);
+    periodEnd.setMinutes(this.state.endMinutes);
+    periodEnd.setSeconds(0);
+    var minutes = 99;
+    if (periodEnd.getHours() === now.getHours())
+        minutes = periodEnd.getMinutes()-now.getMinutes()-1;
+    else if (periodEnd.getHours() === now.getHours()+1)
+        minutes = periodEnd.getMinutes()-now.getMinutes()-1+60;
+    var seconds = 60-now.getSeconds()-periodEnd.getSeconds();
+    if (seconds < 10)
+        seconds = "0"+seconds.toString();
+    document.getElementById("countdown").innerText = "Only "+minutes+":"+seconds+" left!";
+    // Adjust to reveal countdown
+    if (minutes<20)
+        document.getElementById("countdown").style.display = "block";
+    else
+        document.getElementById("countdown").style.display = "none";
+}
+
+countdownColor(now) { // Not sure how useful this is
+    if (now.getSeconds()%2==0)
+        document.getElementById("countdown").style.backgroundColor = "rgba(255, 30, 30, 0.75)";
+    else if (now.getSeconds()%2==1)
+        document.getElementById("countdown").style.backgroundColor = "rgba(220, 40, 40, 0.75)";
+}
 
 render() {
   return (
-    <div>
-        <div className="clock">{this.state.time}</div>
-        <div className="clock-block" id="period">It is currently...</div>
-        <div className="clock-block" id="time-block"></div>
+    <div id="timer-elements" align="center">
+        <div className="clock-div"><span id="current">{this.state.time}</span></div>
+        <div className="clock-div"><span className="clock-block" id="should-be">You should be at:</span></div>
+        <div className="clock-div"><span className="clock-block" id="period">It is currently...</span></div> 
+        <div className="clock-div"><span className="clock-block" id="time-block"></span></div>
+        <div className="clock-div"><span className="clock-block" id="countdown"></span></div>
     </div>
-    
   );
 }
 }

@@ -9,8 +9,9 @@ class Home extends React.Component {
   render() {
     return (
       <div id="home-page">
-        <img id="home-background" src={Yosemite}/>
-        <img id="home-background" src={Saints}/>
+        <img className="home-background" src={Yosemite}/>
+        <img className="home-background" src={Saints}/>
+        <img className="home-background" src={Saints}/>
         <img id="schedule" src={Schedule}/>
         <Timer/>
       </div>

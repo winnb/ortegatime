@@ -1,35 +1,48 @@
-.clock {
-    z-index: 100;
+#timer-elements {
     position: absolute;
-    top: 10vw;
+    z-index: 100;
+    top: 6vw;
+    left: 15vw;
+}
+
+#current {
     font-size: 5vw;
     font-weight: 550;
-    width: 54vw;
-    margin-left: 23vw;
-    margin-right: 23vw;
+    background-color: rgba(200,200,200,0.75);
+    border-radius: 1vw;
+    padding-left: 3.5vw;
+    padding-right: 3.5vw;
+    padding-bottom: 0.75vw;
+}
+
+.clock-div {
+    margin-top: 2.5vw;
 }
 
 .clock-block {
-    z-index: 100;
-    position: absolute;
-    top: 30vw;
     font-size: 4vw;
     font-weight: 550;
-    margin-left: 10vw;
-    margin-right: 10vw;
-    background-color: rgba(200,200,200,0.65);
+    background-color: rgba(200,200,200,0.75);
     border-radius: 1vw;
     padding-left: 1.5vw;
     padding-top: 0.5vw;
     padding-bottom: 0.75vw;
 }
 
+#should-be {
+    padding-right: 1.5vw;
+}
+
 #period {
-    margin-left: 17.5vw;
     padding-right: 1.5vw;
 }
 
 #time-block {
-    margin-left: 50vw;
     padding-right: 1vw;
+}
+
+#countdown {
+    padding-right: 1vw;
+    background-color: rgba(246, 40, 40, 0.75);
+    width: 28vw;
 }
