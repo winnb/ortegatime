@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/home.scss";
 import Yosemite from "../media/yosemite.jpg";
 import Saints from "../media/saintsbg.jpg";
-import Schedule from "../media/schedule.png";
+import Schedule from "../media/santa-ana.png";
 import Timer from "../components/timer";
 
 class Home extends React.Component {
