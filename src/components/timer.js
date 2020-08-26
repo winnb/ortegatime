@@ -209,7 +209,7 @@ wednesday(now) {
             this.setState({endHour: 9, endMinutes: 10});
         }
         // Passing Period 9:10am-9:15am
-        if (now.getHours()===9 && now.getMinutes()>10 && now.getMinutes()<15) {
+        if (now.getHours()===9 && now.getMinutes()>9 && now.getMinutes()<15) {
             document.getElementById("period").innerText = "Passing Period";
             document.getElementById("time-block").innerText = "Period 2 starts at 9:15am";
             this.setState({endHour: 9, endMinutes: 15});
@@ -221,7 +221,7 @@ wednesday(now) {
             this.setState({endHour: 9, endMinutes: 50});
         }
         // Passing Period 9:50am-10:00am
-        if (now.getHours()===9 && now.getMinutes()>50) {
+        if (now.getHours()===9 && now.getMinutes()>49) {
             document.getElementById("period").innerText = "Passing Period";
             document.getElementById("time-block").innerText = "Period 3 starts at 10:00am";
             this.setState({endHour: 10, endMinutes: 0});
@@ -233,7 +233,7 @@ wednesday(now) {
             this.setState({endHour: 10, endMinutes: 40});
         }
         // Passing Period 10:40am-10:45am
-        if (now.getHours()===10 && now.getMinutes()>40 && now.getMinutes()<45) {
+        if (now.getHours()===10 && now.getMinutes()>39 && now.getMinutes()<45) {
             document.getElementById("period").innerText = "Passing Period";
             document.getElementById("time-block").innerText = "Period 4 starts at 10:45am";
             this.setState({endHour: 10, endMinutes: 45});
@@ -257,7 +257,7 @@ wednesday(now) {
             this.setState({endHour: 12, endMinutes: 10});
         }
         // Passing Period 12:10pm-12:15pm
-        if (now.getHours()===12 && now.getMinutes()>5 && now.getMinutes()<15) {
+        if (now.getHours()===12 && now.getMinutes()>9 && now.getMinutes()<15) {
             document.getElementById("period").innerText = "Passing Period";
             document.getElementById("time-block").innerText = "Period 6 starts at 12:15pm";
             this.setState({endHour: 12, endMinutes: 15});
@@ -274,13 +274,13 @@ wednesday(now) {
             document.getElementById("time-block").innerText = "12:50am-1:50pm";
             this.setState({endHour: 13, endMinutes: 50});
         }
-        if ((now.getHours()===13 && now.getMinutes()>50) || (now.getHours()===14 && now.getMinutes()<45) ) {
+        if ((now.getHours()===13 && now.getMinutes()>49) || (now.getHours()===14 && now.getMinutes()<45) ) {
             document.getElementById("period").innerText = "Office Hours";
             document.getElementById("time-block").innerText = "1:50pm-2:45pm";
             this.setState({endHour: 14, endMinutes: 45});
         }
         // Not a monday
-        if ((now.getHours()===14 && now.getMinutes()>45) || now.getHours()===15) {
+        if ((now.getHours()===14 && now.getMinutes()>44) || now.getHours()===15) {
             document.getElementById("period").innerText = "Period 7/8";
             document.getElementById("time-block").innerText = "2:45pm-4:00pm";
             this.setState({endHour: 16, endMinutes: 0});
