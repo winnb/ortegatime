@@ -2,21 +2,23 @@
     position: absolute;
     z-index: 100;
     top: 6vw;
-    left: 15vw;
+    left: 12vw;
 }
 
 #current {
     font-size: 5vw;
-    font-weight: 550;
-    background-color: rgba(200,200,200,0.75);
+    font-weight: 500;
+    background-color: rgba(200,200,200,0);
+    color: white;
     border-radius: 1vw;
-    padding-left: 3.5vw;
-    padding-right: 3.5vw;
+    //padding-left: 3.5vw;
+    padding-right: 5vw;
     padding-bottom: 0.75vw;
+    font-family: 'Work Sans', sans-serif;
 }
 
 .clock-div {
-    margin-top: 2.5vw;
+    margin-top: 15vw;
 }
 
 .clock-block {
@@ -34,15 +36,37 @@
 }
 
 #period {
-    padding-right: 1.5vw;
+    font-size: 3vw;
+    font-weight: 400;
+    background-color: rgba(200,200,200,0);
+    color: white;
+    border-radius: 1vw;
+    padding-bottom: 0.75vw;
+    font-family: 'Work Sans', sans-serif;
+    display: flex;
+    margin-top: 4vw;
 }
 
 #time-block {
-    padding-right: 1vw;
+    font-size: 3vw;
+    font-weight: 400;
+    background-color: rgba(200,200,200,0);
+    color: white;
+    border-radius: 1vw;
+    padding-bottom: 0.75vw;
+    font-family: 'Work Sans', sans-serif;
+    display: flex;
+    margin-top: 1vw;
 }
 
 #countdown {
-    padding-right: 1vw;
-    background-color: rgba(246, 40, 40, 0.75);
-    width: 28vw;
+    font-size: 3vw;
+    font-weight: 400;
+    background-color: rgba(200,200,200,0);
+    color: white;
+    border-radius: 1vw;
+    padding-bottom: 0.75vw;
+    font-family: 'Work Sans', sans-serif;
+    display: flex;
+    margin-top: 1vw;
 }

@@ -6,7 +6,7 @@ class Timer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          time: new Date().toLocaleString(),
+          //time: new Date().toLocaleString(),
           endHour: 0,
           endMinutes: 0
         };
@@ -125,15 +125,15 @@ mondayThursday(now) {
             }
             // School over
             if (now.getHours()>14) {
-                document.getElementById("period").innerText = "after school";
-                document.getElementById("time-block").innerText = "past 4:00pm";
+                document.getElementById("period").innerText = "After School";
+                document.getElementById("time-block").innerText = "Currently Past 4:00pm";
                 this.setState({endHour: 99, endMinutes: 0});
             }
         }
         else
             if ((now.getHours()===14 && now.getMinutes()>44) || now.getHours()>14) {
-                document.getElementById("period").innerText = "after school";
-                document.getElementById("time-block").innerText = "past 4:00pm";
+                document.getElementById("period").innerText = "After School";
+                document.getElementById("time-block").innerText = "Currently Past 4:00pm";
                 this.setState({endHour: 99, endMinutes: 0});
             }
     }
@@ -192,8 +192,8 @@ tuesdayFriday(now) {
         }
         // School over
         if (now.getHours()>14) {
-            document.getElementById("period").innerText = "after school";
-            document.getElementById("time-block").innerText = "past 4:00pm";
+            document.getElementById("period").innerText = "After School";
+            document.getElementById("time-block").innerText = "Currently Past 4:00pm";
             this.setState({endHour: 99, endMinutes: 0});
         }                                                                                                                                          
     }
@@ -286,8 +286,8 @@ wednesday(now) {
             this.setState({endHour: 16, endMinutes: 0});
         }
         if (now.getHours()>14) {
-            document.getElementById("period").innerText = "after school";
-            document.getElementById("time-block").innerText = "past 4:00pm";
+            document.getElementById("period").innerText = "After School";
+            document.getElementById("time-block").innerText = "Currently Past 4:00pm";
             this.setState({endHour: 99, endMinutes: 0});
         }
     }
@@ -307,10 +307,10 @@ countdown(now) {
     var seconds = 60-now.getSeconds()-periodEnd.getSeconds();
     if (seconds < 10)
         seconds = "0"+seconds.toString();
-    document.getElementById("countdown").innerText = "Only "+minutes+":"+seconds+" left!";
+    document.getElementById("countdown").innerText = minutes+":"+seconds+" until end of period";
     // Adjust to reveal countdown
     if (minutes<20)
-        document.getElementById("countdown").style.display = "block";
+        document.getElementById("countdown").style.display = "flex";
     else
         document.getElementById("countdown").style.display = "none";
 }
@@ -325,11 +325,15 @@ countdownColor(now) { // Not sure how useful this is
 render() {
   return (
     <div id="timer-elements" align="center">
-        <div className="clock-div"><span id="current">{this.state.time}</span></div>
-        <div className="clock-div"><span className="clock-block" id="should-be">You should be at:</span></div>
-        <div className="clock-div"><span className="clock-block" id="period">It is currently...</span></div> 
-        <div className="clock-div"><span className="clock-block" id="time-block"></span></div>
-        <div className="clock-div"><span className="clock-block" id="countdown"></span></div>
+        <div className="clock-div">
+            <span id="current">{this.state.time}</span>
+            <div id="period"></div>
+            <div id="time-block"></div>
+            <div id="countdown"></div>
+        </div>
+        {/* <div className="clock-div"><span className="clock-block" id="should-be">You should be at:</span></div> */}
+        
+        {/* <div className="clock-div"><span className="clock-block" id="countdown"></span></div> */}
     </div>
   );
 }
