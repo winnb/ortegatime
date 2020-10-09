@@ -1,9 +1,7 @@
 import React from "react";
 import "../styles/home.scss";
-import Yosemite from "../media/yosemite.jpg";
 import Purple from "../media/purple.jpg";
 import Saints from "../media/saintsbg.jpg";
-import Schedule from "../media/santa-ana.png";
 import Timer from "../components/timer";
 import SA from "../media/sa logo.png";
 import Clipboard from "../media/clipboard.jpg";
@@ -11,6 +9,11 @@ import ClipboardPu from "../media/clipboard-purple.jpg";
 import ClipboardPi from "../media/clipboard-pink.jpg";
 import Play from "../media/play.png";
 import FAQ from "../media/faq.png";
+import Orange from "../media/orange.jpg";
+import MT from "../media/santa-ana mon-thur.png";
+import TF from "../media/santa-ana tues-fri.png";
+import Blue from "../media/blue.jpg";
+import W from "../media/santa-ana wed.png";
 
 class Home extends React.Component {
   render() {
@@ -18,23 +21,24 @@ class Home extends React.Component {
       <div id="home-page">
         <img className="home-background" src={Purple}/>
         <div id="white-bg"/>
+        <img className="home-background" src={Orange}/>
+        <div id="white-bg"/>
+        <img className="home-background" src={Blue}/>
+        <div id="white-bg"/>
         <img className="home-background" src={Saints}/>
-        <img className="home-background" src={Saints}/>
-        <img id="schedule" src={Schedule}/>
         <Timer/>
-        <input/>
         <a id="ortegatime" href="https://www.sausd.us/sahs"><img id="sa" src={SA}/>Santa Ana</a>
         <a id="home-button" href="/">Home</a>
         <div id="menu-button">☰</div>
-        <a href="#schedule" className="white-box" id="box1">
+        <a href="#box7" className="white-box" id="box1">
           <img id="clipboard" src={Clipboard}/>
           <div className="box-text">Mon/Thurs Schedule</div>
         </a>
-        <a href="#schedule" className="white-box" id="box2">
+        <a href="#box8" className="white-box" id="box2">
           <img id="clipboard" src={ClipboardPu}/>
           <div className="box-text">Tues/Fri Schedule</div>
         </a>
-        <a href="#schedule" className="white-box" id="box3">
+        <a href="#box9" className="white-box" id="box3">
           <img id="clipboard" src={ClipboardPi}/>
           <div className="box-text">Wed Schedule</div>
         </a>
@@ -46,7 +50,23 @@ class Home extends React.Component {
           <img id="play" src={FAQ}/>
           <div className="box-text">Frequently Asked Questions</div>
         </a>
-      </div>
+        <a className="white-box-xl" id="box6">
+          <iframe id="quiz" src="https://quizlet.com/481289434/match/embed?i=1b80tu&x=1jj1" style={{border:0}}></iframe>
+          <div className="box-text">Test your knowledge</div>
+        </a>
+        <div id="MT-title">Monday/Thursday Schedule</div>
+        <a className="white-box-tall" id="box7">
+          <img id="MT" src={MT}/>
+        </a>
+        <div id="TF-title">Tuesday/Friday Schedule</div>
+        <a className="white-box-tall" id="box8">
+          <img id="TF" src={TF}/>
+        </a>
+        <div id="W-title">Wednesday Schedule</div>
+        <a className="white-box-tall" id="box9">
+          <img id="W" src={W}/>
+        </a>
+        </div>
     );
   };
 }

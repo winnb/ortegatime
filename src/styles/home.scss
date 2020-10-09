@@ -97,6 +97,39 @@
     transition-duration: 1s;
     cursor: pointer;
 }
+.white-box-xl {
+    position: absolute;
+    top: 87vw;
+    left: 11vw;
+    width: 78vw;
+    height: 25vw;
+    background-color: rgb(255,255,255);
+    border-radius: 1vw;
+    box-shadow: 0vw 0.5vw 0.5vw rgb(150,150,150);
+    text-decoration: none;
+}
+.white-box-xl:hover {
+    box-shadow: 0vw 0.5vw 0.5vw rgb(100,100,100);
+    transform: scale(1.01);
+    transition-duration: 1s;
+    cursor: pointer;
+}
+.white-box-tall {
+    position: absolute;
+    left: 11vw;
+    width: 36vw;
+    height: 42vw;
+    background-color: rgb(255,255,255);
+    border-radius: 1vw;
+    box-shadow: 0vw 0.5vw 0.5vw rgb(150,150,150);
+    text-decoration: none;
+}
+.white-box-tall:hover {
+    box-shadow: 0vw 0.5vw 0.5vw rgb(100,100,100);
+    transform: scale(1.01);
+    transition-duration: 1s;
+    cursor: pointer;
+}
 #box1 {
     left: 10.5vw;
 }
@@ -111,6 +144,16 @@
 }
 #box5 {
     left: 51vw;
+}
+#box7 {
+    top: 118vw;
+}
+#box8 {
+    top: 175vw;
+    left: 50vw;
+}
+#box9 {
+    top: 232vw;
 }
 #clipboard {
     width: 10vw;
@@ -131,4 +174,66 @@
     margin-left: 14.25vw;
     margin-top: 1vw;
     border-radius: 1vw;
+}
+#quiz {
+    width: 80%;
+    height: 75%;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+#MT {
+    margin-top: 2vw;
+    margin-left: 2vw;
+    width: 80%;
+    //background-color: rgb(255, 166, 121);
+    border-radius: 2vw;
+    padding: 1vw;
+}
+#MT-title {
+    position: absolute;
+    top: 136vw;
+    left: 50vw;
+    font-size: 4vw;
+    font-weight: 500;
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    width: 45vw;
+}
+#TF {
+    margin-top: 2vw;
+    margin-left: 2vw;
+    width: 80%;
+    //background-color: rgb(255, 166, 121);
+    border-radius: 2vw;
+    padding: 1vw;
+    left: 50vw;
+}
+#TF-title {
+    position: absolute;
+    top: 190vw;
+    left: 12vw;
+    font-size: 4vw;
+    font-weight: 500;
+    color: black;
+    font-family: 'Work Sans', sans-serif;
+    width: 45vw;
+    text-shadow: 0vw 0.5vw 0.5vw rgb(150,150,150);
+}
+#W {
+    margin-top: 2vw;
+    margin-left: 2vw;
+    width: 80%;
+    //background-color: rgb(255, 166, 121);
+    border-radius: 2vw;
+    padding: 1vw;
+}
+#W-title {
+    position: absolute;
+    top: 250vw;
+    left: 50vw;
+    font-size: 4vw;
+    font-weight: 500;
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    width: 45vw;
 }
