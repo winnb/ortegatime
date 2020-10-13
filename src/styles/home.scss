@@ -147,13 +147,14 @@
 }
 #box7 {
     top: 118vw;
+    left: 50vw;
 }
 #box8 {
     top: 175vw;
-    left: 50vw;
 }
 #box9 {
     top: 232vw;
+    left: 50vw;
 }
 #clipboard {
     width: 10vw;
@@ -185,55 +186,60 @@
     margin-top: 2vw;
     margin-left: 2vw;
     width: 80%;
-    //background-color: rgb(255, 166, 121);
     border-radius: 2vw;
     padding: 1vw;
+    left: 50vw;
 }
 #MT-title {
-    position: absolute;
     top: 136vw;
-    left: 50vw;
+    position: absolute;
+    left: 12vw;
     font-size: 4vw;
     font-weight: 500;
-    color: white;
     font-family: 'Work Sans', sans-serif;
     width: 45vw;
+    color: white;
 }
 #TF {
     margin-top: 2vw;
     margin-left: 2vw;
     width: 80%;
-    //background-color: rgb(255, 166, 121);
     border-radius: 2vw;
     padding: 1vw;
-    left: 50vw;
 }
 #TF-title {
-    position: absolute;
     top: 190vw;
-    left: 12vw;
+    position: absolute;
+    left: 50vw;
     font-size: 4vw;
     font-weight: 500;
-    color: black;
     font-family: 'Work Sans', sans-serif;
     width: 45vw;
+    color: black;
     text-shadow: 0vw 0.5vw 0.5vw rgb(150,150,150);
 }
 #W {
     margin-top: 2vw;
     margin-left: 2vw;
     width: 80%;
-    //background-color: rgb(255, 166, 121);
     border-radius: 2vw;
     padding: 1vw;
 }
 #W-title {
-    position: absolute;
     top: 250vw;
-    left: 50vw;
+    position: absolute;
+    left: 20vw;
     font-size: 4vw;
     font-weight: 500;
-    color: white;
     font-family: 'Work Sans', sans-serif;
-    width: 45vw;
+    width: 40vw;
+    color: white;
+}
+#author {
+    position: absolute;
+    top: 343vw;
+    left: 3vw;
+    color: white;
+    font-size: 2vw;
+    font-family: 'Sansita Swashed', cursive;
 }

@@ -24,7 +24,6 @@ class Home extends React.Component {
         <img className="home-background" src={Orange}/>
         <div id="white-bg"/>
         <img className="home-background" src={Blue}/>
-        <div id="white-bg"/>
         <img className="home-background" src={Saints}/>
         <Timer/>
         <a id="ortegatime" href="https://www.sausd.us/sahs"><img id="sa" src={SA}/>Santa Ana</a>
@@ -66,6 +65,7 @@ class Home extends React.Component {
         <a className="white-box-tall" id="box9">
           <img id="W" src={W}/>
         </a>
+        <div id="author">Brandon Winn 2020</div>
         </div>
     );
   };
