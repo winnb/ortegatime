@@ -331,9 +331,6 @@ render() {
             <div id="time-block"></div>
             <div id="countdown"></div>
         </div>
-        {/* <div className="clock-div"><span className="clock-block" id="should-be">You should be at:</span></div> */}
-        
-        {/* <div className="clock-div"><span className="clock-block" id="countdown"></span></div> */}
     </div>
   );
 }

@@ -3,7 +3,6 @@ import "../styles/home.scss";
 import Purple from "../media/purple.jpg";
 import Saints from "../media/saintsbg.jpg";
 import Timer from "../components/timer";
-import SA from "../media/sa logo.png";
 import Clipboard from "../media/clipboard.jpg";
 import ClipboardPu from "../media/clipboard-purple.jpg";
 import ClipboardPi from "../media/clipboard-pink.jpg";
@@ -26,9 +25,6 @@ class Home extends React.Component {
         <img className="home-background" src={Blue}/>
         <img className="home-background" src={Saints}/>
         <Timer/>
-        <a id="ortegatime" href="https://www.sausd.us/sahs"><img id="sa" src={SA}/>Santa Ana</a>
-        <a id="home-button" href="/">Home</a>
-        <div id="menu-button">☰</div>
         <a href="#box7" className="white-box" id="box1">
           <img id="clipboard" src={Clipboard}/>
           <div className="box-text">Mon/Thurs Schedule</div>
@@ -65,7 +61,7 @@ class Home extends React.Component {
         <a className="white-box-tall" id="box9">
           <img id="W" src={W}/>
         </a>
-        <div id="author">Brandon Winn 2020</div>
+        <div id="home-author">Brandon Winn 2020</div>
         </div>
     );
   };
