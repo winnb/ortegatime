@@ -4,6 +4,7 @@ import { Router } from "@reach/router"; // Router
 // Pages
 import Home from "./pages/home";
 import Links from "./pages/links";
+import About from "./pages/about";
 import PageNotFound from "./pages/pagenotfound";
 
 // Components
@@ -26,6 +27,7 @@ class App extends React.Component {
             <Router>
               <Home path="/" />
               <Links path="/zoom-links"/>
+              <About path="/about"/>
               <PageNotFound path="/page-not-found" default />
             </Router>
           </div>

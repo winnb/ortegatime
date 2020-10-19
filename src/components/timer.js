@@ -6,7 +6,6 @@ class Timer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          //time: new Date().toLocaleString(),
           endHour: 0,
           endMinutes: 0
         };
@@ -30,7 +29,6 @@ tick() {
     this.weekday(now);
     this.weekend(now);
     this.countdown(now);
-    //this.countdownColor(now);
 }
 
 weekday(now) { // Mon-Fri

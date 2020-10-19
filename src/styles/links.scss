@@ -9,10 +9,10 @@
 }
 #links-author {
     position: absolute;
-    top: 193vw;
-    left: 3vw;
+    top: 154vw;
+    left: 2vw;
     color: white;
-    font-size: 2vw;
+    font-size: 1vw;
     font-family: 'Sansita Swashed', cursive;
 }
 #links-title {
@@ -95,6 +95,13 @@
     margin-top: 20vw;
     margin-left: 50vw;
     color: rgb(152, 214, 255);
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 #link-box4:hover {
     #hidden-link4 {
@@ -127,6 +134,5 @@
 .hidden-link {
     color: rgba(0, 0, 0, 0);
     text-align: center;
-    margin-left: 5vw;
     font-size: 2vw;
 }
