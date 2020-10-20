@@ -13,6 +13,7 @@ import MT from "../media/santa-ana mon-thur.png";
 import TF from "../media/santa-ana tues-fri.png";
 import Blue from "../media/blue.jpg";
 import W from "../media/santa-ana wed.png";
+import Zoom from "../media/zoom.jpg";
 
 class Home extends React.Component {
   render() {
@@ -37,9 +38,9 @@ class Home extends React.Component {
           <img id="clipboard" src={ClipboardPi}/>
           <div className="box-text">Wed Schedule</div>
         </a>
-        <a href="https://www.youtube.com/watch?v=kQoZch4pCtQ&feature=emb_logo" className="white-box-lg" id="box4">
-          <img id="play" src={Play}/>
-          <div className="box-text">Graduation 2020</div>
+        <a href="/zoom-links" className="white-box-lg" id="box4">
+          <img id="play" src={Zoom}/>
+          <div className="box-text">Zoom Links</div>
         </a>
         <a href="https://docs.google.com/document/d/e/2PACX-1vQYA4nziBQjgpq59JBdza65hOnJrGqeEPETU9MtqaCaXCJ0AV2OPTJJ64RuGdiROvbRJ4Z42PLMSGF6/pub" className="white-box-lg" id="box5">
           <img id="play" src={FAQ}/>

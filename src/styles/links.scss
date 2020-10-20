@@ -36,9 +36,9 @@
     margin-top: 2vw;
     font-size: 2.5vw;
 }
-.white-box-lg {
+.white-box-link {
     position: absolute;
-    top: 69vw;
+    top: 60vw;
     height: 15vw;
     width: 38.5vw;
     background-color: rgb(255,255,255);
@@ -61,7 +61,7 @@
     margin-top: 5vw;
 }
 #link-box1 {
-    margin-left: 10vw;
+    margin-left: 30.75vw;
     color: rgb(255, 152, 255);
 }
 #link-box1:hover {
@@ -71,7 +71,8 @@
     }
 }
 #link-box2 {
-    margin-left: 50vw;
+    margin-left: 30.75vw;
+    margin-top: 16vw;
     color: rgb(191, 159, 250);
 }
 #link-box2:hover {
@@ -81,8 +82,8 @@
     }
 }
 #link-box3 {
-    margin-top: 20vw;
-    margin-left: 10vw;
+    margin-left: 30.75vw;
+    margin-top: 32vw;
     color: rgb(255, 239, 147);
 }
 #link-box3:hover {
@@ -91,27 +92,27 @@
         color: rgb(8, 32, 109);
     }
 }
-#link-box4 {
-    margin-top: 20vw;
-    margin-left: 50vw;
-    color: rgb(152, 214, 255);
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-}
-#link-box4:hover {
-    #hidden-link4 {
-        transition-duration: 1s;
-        color: rgb(8, 32, 109);
-    }
-}
+// #link-box4 {
+//     margin-top: 20vw;
+//     margin-left: 50vw;
+//     color: rgb(152, 214, 255);
+//     -webkit-touch-callout: none; /* iOS Safari */
+//     -webkit-user-select: none; /* Safari */
+//      -khtml-user-select: none; /* Konqueror HTML */
+//        -moz-user-select: none; /* Old versions of Firefox */
+//         -ms-user-select: none; /* Internet Explorer/Edge */
+//             user-select: none; /* Non-prefixed version, currently
+//                                   supported by Chrome, Edge, Opera and Firefox */
+// }
+// #link-box4:hover {
+//     #hidden-link4 {
+//         transition-duration: 1s;
+//         color: rgb(8, 32, 109);
+//     }
+// }
 #link-box5 {
-    margin-top: 40vw;
-    margin-left: 10vw;
+    margin-left: 30.75vw;
+    margin-top: 48vw;
     color: rgb(255, 158, 174);
 }
 #link-box5:hover {
@@ -121,8 +122,8 @@
     }
 }
 #link-box6 {
-    margin-top: 40vw;
-    margin-left: 50vw;
+    margin-left: 30.75vw;
+    margin-top: 64vw;
     color: rgb(142, 255, 208);
 }
 #link-box6:hover {
