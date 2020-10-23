@@ -307,10 +307,10 @@ countdown(now) {
         seconds = "0"+seconds.toString();
     document.getElementById("countdown").innerText = minutes+":"+seconds+" until end of period";
     // Adjust to reveal countdown
-    if (minutes<20)
+    //if (minutes<20)
         document.getElementById("countdown").style.display = "flex";
-    else
-        document.getElementById("countdown").style.display = "none";
+    //else
+    //    document.getElementById("countdown").style.display = "none";
 }
 
 countdownColor(now) { // Not sure how useful this is
