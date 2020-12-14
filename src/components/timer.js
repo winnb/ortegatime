@@ -1,6 +1,7 @@
 // React
 import React from "react";
 import "../styles/timer.scss";
+import Finals from "../media/finals.jpg";
 
 class Timer extends React.Component {
     constructor(props) {
@@ -296,6 +297,8 @@ wednesday(now) {
 finals(now) {
     // Monday finals schedule same as normal wednesday
     if (now.getMonth()===11 && now.getDate()==14 && now.getYear()===120) {
+        // Add finals schedule image to home page
+
         // 1st Period 8:30am-9:10am
         if ((now.getHours()===8 && now.getMinutes()>29) || (now.getHours()===9 && now.getMinutes()<10) ) {
             document.getElementById("period").innerText = "Period 1";
@@ -385,6 +388,11 @@ finals(now) {
             this.setState({endHour: 99, endMinutes: 0});
         }
     }
+    else if (now.getMonth()===11 && now.getDate()==15 && now.getYear()===120) {
+
+    }
+    else
+        document.getElementById("finals-block").style.display = "None";
 }
 
 countdown(now) {
@@ -424,6 +432,10 @@ render() {
             <div id="period"></div>
             <div id="time-block"></div>
             <div id="countdown"></div>
+        </div>
+        <div id="finals-block">
+            <div id="finals-week">Finals Week</div>
+            <img id="finals" src={Finals} alt="Finals schedule fall 2020"></img>
         </div>
     </div>
   );
