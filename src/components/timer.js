@@ -28,10 +28,29 @@ tick() {
     var timeLength = now.toLocaleTimeString().length;
     this.setState({ time: now.toDateString()+" "+now.toLocaleTimeString().substr(0,timeLength-6)+" "+now.toLocaleTimeString().substr(timeLength-2,timeLength) });
     
-    this.weekday(now);
-    this.weekend(now);
+    if (!this.isFinals(now)) {
+        this.weekday(now);
+        this.weekend(now);  
+    }
+    else
+        this.finals(now)
+    
     this.countdown(now);
-    this.finals(now)
+}
+
+isFinals(now) {
+    if (now.getMonth()===11 && now.getDate()==14 && now.getYear()===120)
+        return true;
+    else if (now.getMonth()===11 && now.getDate()==15 && now.getYear()===120)
+        return true;
+    else if (now.getMonth()===11 && now.getDate()==16 && now.getYear()===120)
+        return true;
+    else if (now.getMonth()===11 && now.getDate()==17 && now.getYear()===120)
+        return true;
+    else if (now.getMonth()===11 && now.getDate()==18 && now.getYear()===120)
+        return true;
+    else
+        return false;
 }
 
 weekday(now) { // Mon-Fri
