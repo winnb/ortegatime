@@ -1,7 +1,7 @@
 // React
 import React from "react";
 import "../styles/timer.scss";
-import Finals from "../media/finals.jpg";
+//import Finals from "../media/finals.jpg";
 
 class Timer extends React.Component {
     constructor(props) {
@@ -564,10 +564,10 @@ render() {
             <div id="time-block"></div>
             <div id="countdown"></div>
         </div>
-        <div id="finals-block">
+        {/* <div id="finals-block">
             <div id="finals-week">Finals Week</div>
             <img id="finals" src={Finals} alt="Finals schedule fall 2020"></img>
-        </div>
+        </div> */}
     </div>
   );
 }
